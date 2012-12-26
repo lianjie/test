@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Lon:</b>
+  <%= @point.lon %>
+</p>
+
+<p>
+  <b>Lat:</b>
+  <%= @point.lat %>
+</p>
+
+
+<%= link_to 'Edit', edit_point_path(@point) %> |
+<%= link_to 'Back', points_path %>
+<%= $points %>

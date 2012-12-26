@@ -1,0 +1,31 @@
+<h1>Listing points</h1>
+
+<table>
+  <tr>
+    <th>Lon</th>
+    <th>Lat</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @points.each do |point| %>
+  <tr>
+    <td><%= point.lon %></td>
+    <td><%= point.lat %></td>
+    <td><%= link_to 'Show', point %></td>
+    <td><%= link_to 'Edit', edit_point_path(point) %></td>
+    <td><%= link_to 'Destroy', point, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Point', new_point_path %>
+<form action="points/result" method="post">
+<br />范围：<input type="text" name="category"/>(单位：km)
+<br />中心点：<input type="text" name="lon"/>,<input type="text" name="lat"/>
+<input type="submit"  value="search"/>
+</form>
+<%= @centre %>
